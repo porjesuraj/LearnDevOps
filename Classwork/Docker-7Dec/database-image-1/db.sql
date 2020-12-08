@@ -1,0 +1,2 @@
+create table user(id integer primary key auto_increment,firstname varchar(40),lastname varchar(40),email varchar(50),password varchar(100)); 
+create table product (id integer primary key auto_increment,title varchar(100),price float); 
