@@ -1,0 +1,20 @@
+Vagrant.configure("2") do |config|
+  config.vm.box = "ubuntu/bionic64"
+  config.vm.provision "shell", path: 'init2.sh'
+
+  config.vm.define "node1" do |app|
+      app.vm.hostname = 'node1'
+      app.vm.network "private_network", ip: '192.168.2.201'
+      app.vm.provider "virtualbox" do |vb|
+          vb.name = "node1"
+      end
+  end
+
+  config.vm.define "node2" do |app|
+      app.vm.hostname = 'node2'
+      app.vm.network "private_network", ip: '192.168.2.202'
+      app.vm.provider "virtualbox" do |vb|
+          vb.name = "node2"
+      end
+  end
+end
